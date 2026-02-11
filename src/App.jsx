@@ -114,7 +114,7 @@ function App() {
 
   if (currentPage === 'landing') {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center py-12 px-16 relative">
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center py-8 px-16 relative">
         <button
           onClick={toggleFullscreen}
           className="absolute top-4 right-4 p-3 rounded-full bg-black/10 hover:bg-black/20 backdrop-blur-sm transition-all duration-300 transform hover:scale-110 shadow-xl z-10"
@@ -132,18 +132,18 @@ function App() {
         </button>
 
         <div className="flex flex-col items-center w-full max-w-[2000px]">
-          <div className="flex justify-center mb-8 w-full">
+          <div className="flex justify-center mb-6 w-full">
             <img 
               src={zodiacWheel} 
               alt="Chinese Zodiac Wheel" 
-              className="w-full h-auto max-h-[85vh] object-contain rounded-3xl shadow-2xl"
+              className="w-full h-auto max-h-[78vh] object-contain rounded-3xl shadow-2xl"
               loading="eager"
             />
           </div>
-          <div className="flex justify-center w-full mb-8">
+          <div className="flex justify-center w-full">
             <button
               onClick={goToSelection}
-              className="px-24 py-12 rounded-full font-bold text-6xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400 animate-pulse"
+              className="px-20 py-10 rounded-full font-bold text-5xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400 animate-pulse"
             >
               ✨ START ✨
             </button>
@@ -230,14 +230,13 @@ function App() {
               onClick={() => handleZodiacSelect(zodiac)}
               className="group flex flex-col items-center transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
-              <div className="relative mb-3 w-42 h-42 flex items-center justify-center">
+              <div className="relative mb-3 w-36 h-36 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-yellow-100 to-orange-200 rounded-3xl opacity-90 group-hover:opacity-100 transition-all duration-300 shadow-xl group-hover:shadow-amber-400/60 rotate-2 group-hover:rotate-3"></div>
                 <div className="absolute inset-1 bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg"></div>
-                <div className="absolute inset-2 border-3 border-white rounded-2xl shadow-inner bg-gradient-to-br from-amber-50/50 to-transparent"></div>
                 <img 
                   src={zodiac.image} 
                   alt={zodiac.name} 
-                  className="relative z-10 w-36 h-36 object-contain filter brightness-110 contrast-110 group-hover:brightness-125 transition-all duration-300"
+                  className="relative z-10 w-28 h-28 object-contain filter brightness-110 contrast-110 group-hover:brightness-125 transition-all duration-300 drop-shadow-lg"
                   loading="lazy"
                 />
               </div>
