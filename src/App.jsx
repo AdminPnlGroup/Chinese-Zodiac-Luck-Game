@@ -223,10 +223,6 @@ function App() {
       </button>
 
       <div className="w-full max-w-[1300px] relative z-10 py-6">
-        <h1 className="text-6xl font-bold text-center mb-8 text-amber-900 drop-shadow-lg" style={{ fontFamily: 'serif', letterSpacing: '0.05em' }}>
-          SELECT YOUR ZODIAC
-        </h1>
-        
         <div className="grid grid-cols-3 gap-x-6 gap-y-8 px-4">
           {zodiacAnimals.map((zodiac) => (
             <button
@@ -234,14 +230,14 @@ function App() {
               onClick={() => handleZodiacSelect(zodiac)}
               className="group flex flex-col items-center transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
-              <div className="relative mb-3 w-52 h-52 flex items-center justify-center">
+              <div className="relative mb-3 w-42 h-42 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-yellow-100 to-orange-200 rounded-3xl opacity-90 group-hover:opacity-100 transition-all duration-300 shadow-xl group-hover:shadow-amber-400/60 rotate-2 group-hover:rotate-3"></div>
                 <div className="absolute inset-1 bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg"></div>
                 <div className="absolute inset-2 border-3 border-white rounded-2xl shadow-inner bg-gradient-to-br from-amber-50/50 to-transparent"></div>
                 <img 
                   src={zodiac.image} 
                   alt={zodiac.name} 
-                  className="relative z-10 w-44 h-44 object-contain filter brightness-110 contrast-110 group-hover:brightness-125 transition-all duration-300"
+                  className="relative z-10 w-36 h-36 object-contain filter brightness-110 contrast-110 group-hover:brightness-125 transition-all duration-300"
                   loading="lazy"
                 />
               </div>
