@@ -132,15 +132,15 @@ function App() {
         </button>
 
         <div className="flex flex-col items-center w-full max-w-[2000px]">
-          <div className="flex justify-center mb-12 w-full">
+          <div className="flex justify-center mb-8 w-full">
             <img 
               src={zodiacWheel} 
               alt="Chinese Zodiac Wheel" 
-              className="w-full h-auto max-h-[90vh] object-contain rounded-3xl shadow-2xl"
+              className="w-full h-auto max-h-[85vh] object-contain rounded-3xl shadow-2xl"
               loading="eager"
             />
           </div>
-          <div className="flex justify-center w-full">
+          <div className="flex justify-center w-full mb-8">
             <button
               onClick={goToSelection}
               className="px-24 py-12 rounded-full font-bold text-6xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400 animate-pulse"
@@ -173,21 +173,21 @@ function App() {
         </button>
 
         <div className="flex flex-col items-center w-full max-w-[2000px]">
-          <div className="flex justify-center mb-12 w-full">
+          <div className="flex justify-center mb-8 w-full">
             {imageLoading ? (
-              <div className="w-full h-[90vh] flex items-center justify-center">
+              <div className="w-full h-[85vh] flex items-center justify-center">
                 <div className="text-4xl text-gray-400 animate-pulse">Loading...</div>
               </div>
             ) : (
               <img 
                 src={cardImageUrl} 
                 alt={selectedZodiac.name} 
-                className="w-full h-auto max-h-[90vh] object-contain rounded-3xl shadow-2xl"
+                className="w-full h-auto max-h-[85vh] object-contain rounded-3xl shadow-2xl"
                 loading="eager"
               />
             )}
           </div>
-          <div className="flex justify-center w-full">
+          <div className="flex justify-center w-full mb-8">
             <button
               onClick={goToLanding}
               className="px-20 py-10 rounded-full font-bold text-5xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400"
@@ -222,32 +222,32 @@ function App() {
         )}
       </button>
 
-      <div className="w-full max-w-[1400px] relative z-10 py-8">
-        <h1 className="text-7xl font-bold text-center mb-12 text-amber-900 drop-shadow-lg" style={{ fontFamily: 'serif', letterSpacing: '0.05em' }}>
+      <div className="w-full max-w-[1300px] relative z-10 py-6">
+        <h1 className="text-6xl font-bold text-center mb-8 text-amber-900 drop-shadow-lg" style={{ fontFamily: 'serif', letterSpacing: '0.05em' }}>
           SELECT YOUR ZODIAC
         </h1>
         
-        <div className="grid grid-cols-3 gap-x-8 gap-y-10 px-6">
+        <div className="grid grid-cols-3 gap-x-6 gap-y-8 px-4">
           {zodiacAnimals.map((zodiac) => (
             <button
               key={zodiac.name}
               onClick={() => handleZodiacSelect(zodiac)}
               className="group flex flex-col items-center transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
-              <div className="relative mb-4 w-64 h-64 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-yellow-100 to-orange-200 rounded-3xl opacity-90 group-hover:opacity-100 transition-all duration-300 shadow-2xl group-hover:shadow-amber-400/60 rotate-2 group-hover:rotate-3"></div>
+              <div className="relative mb-3 w-52 h-52 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-yellow-100 to-orange-200 rounded-3xl opacity-90 group-hover:opacity-100 transition-all duration-300 shadow-xl group-hover:shadow-amber-400/60 rotate-2 group-hover:rotate-3"></div>
                 <div className="absolute inset-1 bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg"></div>
                 <div className="absolute inset-2 border-3 border-white rounded-2xl shadow-inner bg-gradient-to-br from-amber-50/50 to-transparent"></div>
                 <img 
                   src={zodiac.image} 
                   alt={zodiac.name} 
-                  className="relative z-10 w-56 h-56 object-contain filter brightness-110 contrast-110 group-hover:brightness-125 transition-all duration-300"
+                  className="relative z-10 w-44 h-44 object-contain filter brightness-110 contrast-110 group-hover:brightness-125 transition-all duration-300"
                   loading="lazy"
                 />
               </div>
-              <div className="bg-gradient-to-b from-amber-800 to-amber-950 text-white rounded-xl px-6 py-3 shadow-2xl group-hover:shadow-amber-900/50 transition-all duration-300 min-w-[200px] border-2 border-amber-700">
-                <div className="text-xl font-bold mb-0.5 tracking-wider">{zodiac.name.toUpperCase()}</div>
-                <div className="text-base font-light opacity-90">{zodiac.nameThai}</div>
+              <div className="bg-gradient-to-b from-amber-800 to-amber-950 text-white rounded-xl px-5 py-2.5 shadow-xl group-hover:shadow-amber-900/50 transition-all duration-300 min-w-[180px] border-2 border-amber-700">
+                <div className="text-lg font-bold mb-0.5 tracking-wider">{zodiac.name.toUpperCase()}</div>
+                <div className="text-sm font-light opacity-90">{zodiac.nameThai}</div>
               </div>
             </button>
           ))}
