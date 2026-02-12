@@ -96,8 +96,8 @@ function App() {
   const goToSelection = () => {
     setCurrentPage('selection')
     setSelectedZodiac(null)
-    setImageLoaded(false)
-    setImageLoading(true)
+    setImageLoaded(true)
+    setImageLoading(false)
   }
 
   const goToLanding = () => {
@@ -263,7 +263,7 @@ function App() {
       />
       <button
         onClick={toggleFullscreen}
-        className="absolute top-4 right-4 p-3 rounded-full bg-black/10 hover:bg-black/20 backdrop-blur-sm transition-all duration-300 transform hover:scale-110 shadow-xl z-20"
+        className="absolute top-4 right-4 p-3 rounded-full bg-black/10 hover:bg-black/20 transition-all duration-300 transform hover:scale-110 shadow-xl z-20"
         title={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
       >
         {isFullscreen ? (
@@ -291,8 +291,9 @@ function App() {
                 <img 
                   src={zodiac.image} 
                   alt={zodiac.name} 
-                  className="relative z-10 w-14 h-14 object-contain filter brightness-110 contrast-110 group-hover:brightness-125 transition-all duration-300 drop-shadow-lg"
-                  loading="lazy"
+                  className="relative z-10 w-14 h-14 object-contain group-hover:brightness-110 transition-opacity duration-200"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
               <div className="bg-gradient-to-b from-amber-800 to-amber-950 text-white rounded-lg px-3 py-1.5 shadow-xl group-hover:shadow-amber-900/50 transition-all duration-300 min-w-[120px] border-2 border-amber-700">
