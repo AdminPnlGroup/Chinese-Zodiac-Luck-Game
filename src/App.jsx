@@ -25,6 +25,18 @@ import monkeyCard from './assets/images/Card Image/Monkey.jpg'
 import roosterCard from './assets/images/Card Image/Rooster.jpg'
 import dogCard from './assets/images/Card Image/Dog.jpg'
 import pigCard from './assets/images/Card Image/Pig.jpg'
+import ratButton from './assets/images/botton/Rat.png'
+import oxButton from './assets/images/botton/Ox.png'
+import tigerButton from './assets/images/botton/Tiger.png'
+import rabbitButton from './assets/images/botton/Rabbit.png'
+import dragonButton from './assets/images/botton/Dragon.png'
+import snakeButton from './assets/images/botton/Snake.png'
+import horseButton from './assets/images/botton/Horse.png'
+import goatButton from './assets/images/botton/Goat.png'
+import monkeyButton from './assets/images/botton/Money.png'
+import roosterButton from './assets/images/botton/Rooster.png'
+import dogButton from './assets/images/botton/Dog.png'
+import pigButton from './assets/images/botton/Pig.png'
 
 const cardImages = {
   Rat: ratCard,
@@ -42,18 +54,18 @@ const cardImages = {
 }
 
 const zodiacAnimals = [
-  { name: 'Rat', nameThai: 'ปีชวด (หนู)', image: ratGif, traits: 'Quick-witted, resourceful, versatile', luckyNumbers: [2, 3], color: 'blue' },
-  { name: 'Ox', nameThai: 'ปีฉลู (วัว)', image: oxGif, traits: 'Diligent, dependable, strong', luckyNumbers: [1, 4], color: 'yellow' },
-  { name: 'Tiger', nameThai: 'ปีขาล (เสือ)', image: tigerGif, traits: 'Brave, confident, competitive', luckyNumbers: [1, 3, 4], color: 'orange' },
-  { name: 'Rabbit', nameThai: 'ปีเถาะ (กระต่าย)', image: rabbitGif, traits: 'Quiet, elegant, kind', luckyNumbers: [3, 4, 6], color: 'pink' },
-  { name: 'Dragon', nameThai: 'ปีมะโรง (มังกร)', image: dragonGif, traits: 'Confident, intelligent, enthusiastic', luckyNumbers: [1, 6, 7], color: 'red' },
-  { name: 'Snake', nameThai: 'ปีมะเส็ง (งู)', image: snakeGif, traits: 'Enigmatic, wise, graceful', luckyNumbers: [2, 8, 9], color: 'green' },
-  { name: 'Horse', nameThai: 'ปีมะเมีย (ม้า)', image: horseGif, traits: 'Animated, active, energetic', luckyNumbers: [2, 3, 7], color: 'purple' },
-  { name: 'Goat', nameThai: 'ปีมะแม (แพะ)', image: goatGif, traits: 'Calm, gentle, sympathetic', luckyNumbers: [3, 4, 9], color: 'green' },
-  { name: 'Monkey', nameThai: 'ปีวอก (ลิง)', image: monkeyGif, traits: 'Sharp, smart, curious', luckyNumbers: [1, 7, 8], color: 'yellow' },
-  { name: 'Rooster', nameThai: 'ปีระกา (ไก่)', image: roosterGif, traits: 'Observant, hardworking, courageous', luckyNumbers: [5, 7, 8], color: 'red' },
-  { name: 'Dog', nameThai: 'ปีจอ (สุนัข)', image: dogGif, traits: 'Lovely, honest, prudent', luckyNumbers: [3, 4, 9], color: 'brown' },
-  { name: 'Pig', nameThai: 'ปีกุน (หมู)', image: pigGif, traits: 'Compassionate, generous, diligent', luckyNumbers: [2, 5, 8], color: 'pink' }
+  { name: 'Rat', nameThai: 'ปีชวด (หนู)', image: ratGif, buttonImage: ratButton, traits: 'Quick-witted, resourceful, versatile', luckyNumbers: [2, 3], color: 'blue' },
+  { name: 'Ox', nameThai: 'ปีฉลู (วัว)', image: oxGif, buttonImage: oxButton, traits: 'Diligent, dependable, strong', luckyNumbers: [1, 4], color: 'yellow' },
+  { name: 'Tiger', nameThai: 'ปีขาล (เสือ)', image: tigerGif, buttonImage: tigerButton, traits: 'Brave, confident, competitive', luckyNumbers: [1, 3, 4], color: 'orange' },
+  { name: 'Rabbit', nameThai: 'ปีเถาะ (กระต่าย)', image: rabbitGif, buttonImage: rabbitButton, traits: 'Quiet, elegant, kind', luckyNumbers: [3, 4, 6], color: 'pink' },
+  { name: 'Dragon', nameThai: 'ปีมะโรง (มังกร)', image: dragonGif, buttonImage: dragonButton, traits: 'Confident, intelligent, enthusiastic', luckyNumbers: [1, 6, 7], color: 'red' },
+  { name: 'Snake', nameThai: 'ปีมะเส็ง (งู)', image: snakeGif, buttonImage: snakeButton, traits: 'Enigmatic, wise, graceful', luckyNumbers: [2, 8, 9], color: 'green' },
+  { name: 'Horse', nameThai: 'ปีมะเมีย (ม้า)', image: horseGif, buttonImage: horseButton, traits: 'Animated, active, energetic', luckyNumbers: [2, 3, 7], color: 'purple' },
+  { name: 'Goat', nameThai: 'ปีมะแม (แพะ)', image: goatGif, buttonImage: goatButton, traits: 'Calm, gentle, sympathetic', luckyNumbers: [3, 4, 9], color: 'green' },
+  { name: 'Monkey', nameThai: 'ปีวอก (ลิง)', image: monkeyGif, buttonImage: monkeyButton, traits: 'Sharp, smart, curious', luckyNumbers: [1, 7, 8], color: 'yellow' },
+  { name: 'Rooster', nameThai: 'ปีระกา (ไก่)', image: roosterGif, buttonImage: roosterButton, traits: 'Observant, hardworking, courageous', luckyNumbers: [5, 7, 8], color: 'red' },
+  { name: 'Dog', nameThai: 'ปีจอ (สุนัข)', image: dogGif, buttonImage: dogButton, traits: 'Lovely, honest, prudent', luckyNumbers: [3, 4, 9], color: 'brown' },
+  { name: 'Pig', nameThai: 'ปีกุน (หมู)', image: pigGif, buttonImage: pigButton, traits: 'Compassionate, generous, diligent', luckyNumbers: [2, 5, 8], color: 'pink' }
 ]
 
 const fortunes = [
@@ -277,13 +289,13 @@ function App() {
         )}
       </button>
 
-      <div className="w-full max-w-[1400px] relative z-10 py-8">
-        <div className="grid grid-cols-3 gap-6 px-6">
+      <div className="w-full max-w-[1200px] relative z-10 py-8">
+        <div className="grid grid-cols-3 gap-8 px-8">
           {zodiacAnimals.map((zodiac) => (
             <button
               key={zodiac.name}
               onClick={() => handleZodiacSelect(zodiac)}
-              className="group flex flex-col items-center transition-all duration-300 transform hover:scale-105 cursor-pointer"
+              className="group flex flex-col items-center transition-all duration-200 transform hover:scale-105 cursor-pointer"
             >
               <div className="relative mb-3 w-28 h-28 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-yellow-100 to-orange-200 rounded-2xl opacity-90 group-hover:opacity-100 transition-all duration-300 shadow-xl group-hover:shadow-amber-400/60 rotate-2 group-hover:rotate-3"></div>
@@ -296,10 +308,13 @@ function App() {
                   decoding="async"
                 />
               </div>
-              <div className="bg-[#5a4a3a] text-white rounded-xl px-4 py-2 shadow-lg group-hover:bg-[#6b5a4a] transition-all duration-200 min-w-[140px]">
-                <div className="text-base font-bold mb-0.5 tracking-wide">{zodiac.name.toUpperCase()}</div>
-                <div className="text-xs font-normal opacity-90">{zodiac.nameThai}</div>
-              </div>
+              <img 
+                src={zodiac.buttonImage} 
+                alt={`${zodiac.name} - ${zodiac.nameThai}`} 
+                className="w-full max-w-[200px] h-auto object-contain"
+                loading="eager"
+                decoding="async"
+              />
             </button>
           ))}
         </div>
