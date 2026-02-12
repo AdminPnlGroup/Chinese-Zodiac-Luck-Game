@@ -37,6 +37,8 @@ import monkeyButton from './assets/images/botton/Money.png'
 import roosterButton from './assets/images/botton/Rooster.png'
 import dogButton from './assets/images/botton/Dog.png'
 import pigButton from './assets/images/botton/Pig.png'
+import startButton from './assets/images/botton/Start.png'
+import backToHomeButton from './assets/images/botton/BackToHome.png'
 
 const cardImages = {
   Rat: ratCard,
@@ -205,9 +207,13 @@ function App() {
           <div className={`flex justify-center w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <button
               onClick={goToSelection}
-              className="px-16 py-6 rounded-2xl font-bold text-4xl text-white bg-[#5a4a3a] hover:bg-[#6b5a4a] transition-all duration-200 shadow-lg"
+              className="transition-all duration-200 transform hover:scale-105"
             >
-              START
+              <img 
+                src={startButton} 
+                alt="Start" 
+                className="h-auto max-w-[400px] object-contain"
+              />
             </button>
           </div>
         </div>
@@ -257,9 +263,13 @@ function App() {
           <div className={`flex justify-center w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <button
               onClick={goToLanding}
-              className="px-16 py-6 rounded-2xl font-bold text-4xl text-white bg-[#5a4a3a] hover:bg-[#6b5a4a] transition-all duration-200 shadow-lg"
+              className="transition-all duration-200 transform hover:scale-105"
             >
-              BACK TO HOME
+              <img 
+                src={backToHomeButton} 
+                alt="Back to Home" 
+                className="h-auto max-w-[400px] object-contain"
+              />
             </button>
           </div>
         </div>
