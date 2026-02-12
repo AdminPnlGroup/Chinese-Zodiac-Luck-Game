@@ -285,13 +285,13 @@ function App() {
               onClick={() => handleZodiacSelect(zodiac)}
               className="group flex flex-col items-center transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
-              <div className="relative mb-3 w-24 h-24 flex items-center justify-center">
+              <div className="relative mb-3 w-28 h-28 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-yellow-100 to-orange-200 rounded-2xl opacity-90 group-hover:opacity-100 transition-all duration-300 shadow-xl group-hover:shadow-amber-400/60 rotate-2 group-hover:rotate-3"></div>
-                <div className="absolute inset-1 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-lg"></div>
+                <div className="absolute inset-1 bg-gradient-to-br from-white to-white rounded-2xl shadow-lg"></div>
                 <img 
                   src={zodiac.image} 
                   alt={zodiac.name} 
-                  className="relative z-10 w-16 h-16 object-contain group-hover:brightness-110 transition-opacity duration-200"
+                  className="relative z-10 w-20 h-20 object-contain group-hover:brightness-110 transition-opacity duration-200"
                   loading="eager"
                   decoding="async"
                 />
