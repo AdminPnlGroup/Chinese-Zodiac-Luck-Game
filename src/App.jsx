@@ -71,6 +71,8 @@ function App() {
   const [luckyNumber, setLuckyNumber] = useState(null)
   const [isSpinning, setIsSpinning] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageLoading, setImageLoading] = useState(true)
 
   const handleZodiacSelect = (zodiac) => {
     setSelectedZodiac(zodiac)
@@ -78,16 +80,22 @@ function App() {
     setFortune(null)
     setLuckyNumber(null)
     setCardImageUrl(cardImages[zodiac.name])
+    setImageLoaded(false)
+    setImageLoading(true)
   }
 
   const goToSelection = () => {
     setCurrentPage('selection')
     setSelectedZodiac(null)
+    setImageLoaded(false)
+    setImageLoading(true)
   }
 
   const goToLanding = () => {
     setCurrentPage('landing')
     setSelectedZodiac(null)
+    setImageLoaded(false)
+    setImageLoading(true)
   }
 
   const toggleFullscreen = () => {
@@ -146,15 +154,26 @@ function App() {
         </button>
 
         <div className="flex flex-col items-center w-full max-w-[2000px]">
-          <div className="flex justify-center mb-6 w-full px-4">
+          <div className="flex justify-center mb-6 w-full px-4 relative">
+            {imageLoading && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-full h-[78vh] bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-[2.5rem] shadow-2xl animate-pulse"></div>
+              </div>
+            )}
             <img 
               src={zodiacWheel} 
               alt="Chinese Zodiac Wheel" 
-              className="w-full h-auto max-h-[78vh] object-contain rounded-[2.5rem] shadow-2xl"
+              className={`w-full h-auto max-h-[78vh] object-contain rounded-[2.5rem] shadow-2xl transition-all duration-700 ${imageLoading ? 'opacity-0 blur-lg scale-95' : 'opacity-100 blur-0 scale-100'}`}
               loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              onLoad={() => {
+                setImageLoaded(true)
+                setImageLoading(false)
+              }}
             />
           </div>
-          <div className="flex justify-center w-full">
+          <div className={`flex justify-center w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <button
               onClick={goToSelection}
               className="px-20 py-10 rounded-full font-bold text-5xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400 animate-pulse"
@@ -187,15 +206,26 @@ function App() {
         </button>
 
         <div className="flex flex-col items-center w-full max-w-[2000px]">
-          <div className="flex justify-center mb-6 w-full px-4">
+          <div className="flex justify-center mb-6 w-full px-4 relative">
+            {imageLoading && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-full h-[78vh] bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-[2.5rem] shadow-2xl animate-pulse"></div>
+              </div>
+            )}
             <img 
               src={cardImageUrl} 
               alt={selectedZodiac.name} 
-              className="w-full h-auto max-h-[78vh] object-contain rounded-[2.5rem] shadow-2xl"
+              className={`w-full h-auto max-h-[78vh] object-contain rounded-[2.5rem] shadow-2xl transition-all duration-700 ${imageLoading ? 'opacity-0 blur-lg scale-95' : 'opacity-100 blur-0 scale-100'}`}
               loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              onLoad={() => {
+                setImageLoaded(true)
+                setImageLoading(false)
+              }}
             />
           </div>
-          <div className="flex justify-center w-full">
+          <div className={`flex justify-center w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <button
               onClick={goToLanding}
               className="px-20 py-10 rounded-full font-bold text-5xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400"
