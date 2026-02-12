@@ -79,9 +79,18 @@ function App() {
     setCurrentPage('card')
     setFortune(null)
     setLuckyNumber(null)
-    setCardImageUrl(cardImages[zodiac.name])
-    setImageLoaded(false)
-    setImageLoading(true)
+    const imgUrl = cardImages[zodiac.name]
+    setCardImageUrl(imgUrl)
+    
+    const img = new Image()
+    img.src = imgUrl
+    if (img.complete && img.naturalHeight !== 0) {
+      setImageLoaded(true)
+      setImageLoading(false)
+    } else {
+      setImageLoaded(false)
+      setImageLoading(true)
+    }
   }
 
   const goToSelection = () => {
@@ -94,8 +103,16 @@ function App() {
   const goToLanding = () => {
     setCurrentPage('landing')
     setSelectedZodiac(null)
-    setImageLoaded(false)
-    setImageLoading(true)
+    
+    const img = new Image()
+    img.src = zodiacWheel
+    if (img.complete && img.naturalHeight !== 0) {
+      setImageLoaded(true)
+      setImageLoading(false)
+    } else {
+      setImageLoaded(false)
+      setImageLoading(true)
+    }
   }
 
   const toggleFullscreen = () => {
