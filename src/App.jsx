@@ -207,13 +207,9 @@ function App() {
           <div className={`flex justify-center w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <button
               onClick={goToSelection}
-              className="transition-all duration-200 transform hover:scale-105"
+              className="px-20 py-10 rounded-full font-bold text-5xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400 animate-pulse"
             >
-              <img 
-                src={startButton} 
-                alt="Start" 
-                className="h-auto max-w-[400px] object-contain"
-              />
+              ✨ START ✨
             </button>
           </div>
         </div>
@@ -263,13 +259,9 @@ function App() {
           <div className={`flex justify-center w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <button
               onClick={goToLanding}
-              className="transition-all duration-200 transform hover:scale-105"
+              className="px-20 py-10 rounded-full font-bold text-5xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400"
             >
-              <img 
-                src={backToHomeButton} 
-                alt="Back to Home" 
-                className="h-auto max-w-[400px] object-contain"
-              />
+              ✨ Back to Home ✨
             </button>
           </div>
         </div>
@@ -321,7 +313,7 @@ function App() {
               <img 
                 src={zodiac.buttonImage} 
                 alt={`${zodiac.name} - ${zodiac.nameThai}`} 
-                className="w-full max-w-[200px] h-auto object-contain"
+                className="w-full max-w-[180px] h-auto object-contain rounded-3xl border-4 border-yellow-400 shadow-xl group-hover:shadow-2xl transition-all duration-300"
                 loading="eager"
                 decoding="async"
               />
