@@ -13,20 +13,32 @@ import dogGif from './assets/images/Zodiac Icon/Dog.gif'
 import pigGif from './assets/images/Zodiac Icon/Pig.gif'
 import zodiacWheel from './assets/images/Card Image/chinese-zodiac-wheel.png'
 import bgImage from './assets/images/Card Image/BG.png'
+import ratCard from './assets/images/Card Image/Rat.jpg'
+import oxCard from './assets/images/Card Image/Ox.jpg'
+import tigerCard from './assets/images/Card Image/Tiger.jpg'
+import rabbitCard from './assets/images/Card Image/Rabbit.jpg'
+import dragonCard from './assets/images/Card Image/Dragon.jpg'
+import snakeCard from './assets/images/Card Image/Snake.jpg'
+import horseCard from './assets/images/Card Image/Horse.jpg'
+import goatCard from './assets/images/Card Image/Goat.jpg'
+import monkeyCard from './assets/images/Card Image/Monkey.jpg'
+import roosterCard from './assets/images/Card Image/Rooster.jpg'
+import dogCard from './assets/images/Card Image/Dog.jpg'
+import pigCard from './assets/images/Card Image/Pig.jpg'
 
 const cardImages = {
-  Rat: () => import('./assets/images/Card Image/Rat.jpg'),
-  Ox: () => import('./assets/images/Card Image/Ox.jpg'),
-  Tiger: () => import('./assets/images/Card Image/Tiger.jpg'),
-  Rabbit: () => import('./assets/images/Card Image/Rabbit.jpg'),
-  Dragon: () => import('./assets/images/Card Image/Dragon.jpg'),
-  Snake: () => import('./assets/images/Card Image/Snake.jpg'),
-  Horse: () => import('./assets/images/Card Image/Horse.jpg'),
-  Goat: () => import('./assets/images/Card Image/Goat.jpg'),
-  Monkey: () => import('./assets/images/Card Image/Monkey.jpg'),
-  Rooster: () => import('./assets/images/Card Image/Rooster.jpg'),
-  Dog: () => import('./assets/images/Card Image/Dog.jpg'),
-  Pig: () => import('./assets/images/Card Image/Pig.jpg')
+  Rat: ratCard,
+  Ox: oxCard,
+  Tiger: tigerCard,
+  Rabbit: rabbitCard,
+  Dragon: dragonCard,
+  Snake: snakeCard,
+  Horse: horseCard,
+  Goat: goatCard,
+  Monkey: monkeyCard,
+  Rooster: roosterCard,
+  Dog: dogCard,
+  Pig: pigCard
 }
 
 const zodiacAnimals = [
@@ -59,18 +71,13 @@ function App() {
   const [luckyNumber, setLuckyNumber] = useState(null)
   const [isSpinning, setIsSpinning] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
-  const [imageLoading, setImageLoading] = useState(false)
 
-  const handleZodiacSelect = async (zodiac) => {
+  const handleZodiacSelect = (zodiac) => {
     setSelectedZodiac(zodiac)
-    setImageLoading(true)
     setCurrentPage('card')
     setFortune(null)
     setLuckyNumber(null)
-    
-    const imageModule = await cardImages[zodiac.name]()
-    setCardImageUrl(imageModule.default)
-    setImageLoading(false)
+    setCardImageUrl(cardImages[zodiac.name])
   }
 
   const goToSelection = () => {
@@ -105,7 +112,14 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const preloadImages = [zodiacWheel, bgImage]
+    const preloadImages = [
+      zodiacWheel, 
+      bgImage,
+      ratGif, oxGif, tigerGif, rabbitGif, dragonGif, snakeGif,
+      horseGif, goatGif, monkeyGif, roosterGif, dogGif, pigGif,
+      ratCard, oxCard, tigerCard, rabbitCard, dragonCard, snakeCard,
+      horseCard, goatCard, monkeyCard, roosterCard, dogCard, pigCard
+    ]
     preloadImages.forEach((src) => {
       const img = new Image()
       img.src = src
@@ -174,18 +188,12 @@ function App() {
 
         <div className="flex flex-col items-center w-full max-w-[2000px]">
           <div className="flex justify-center mb-6 w-full px-4">
-            {imageLoading ? (
-              <div className="w-full h-[78vh] flex items-center justify-center">
-                <div className="text-4xl text-gray-400 animate-pulse">Loading...</div>
-              </div>
-            ) : (
-              <img 
-                src={cardImageUrl} 
-                alt={selectedZodiac.name} 
-                className="w-full h-auto max-h-[78vh] object-contain rounded-[2.5rem] shadow-2xl"
-                loading="eager"
-              />
-            )}
+            <img 
+              src={cardImageUrl} 
+              alt={selectedZodiac.name} 
+              className="w-full h-auto max-h-[78vh] object-contain rounded-[2.5rem] shadow-2xl"
+              loading="eager"
+            />
           </div>
           <div className="flex justify-center w-full">
             <button
@@ -222,8 +230,8 @@ function App() {
         )}
       </button>
 
-      <div className="w-full max-w-[1300px] relative z-10 py-6">
-        <div className="grid grid-cols-3 gap-x-6 gap-y-8 px-4">
+      <div className="w-full max-w-[1400px] relative z-10 py-8">
+        <div className="grid grid-cols-3 gap-6 px-6">
           {zodiacAnimals.map((zodiac) => (
             <button
               key={zodiac.name}
