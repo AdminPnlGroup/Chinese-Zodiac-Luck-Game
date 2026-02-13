@@ -37,8 +37,6 @@ import monkeyButton from './assets/images/botton/Money.png'
 import roosterButton from './assets/images/botton/Rooster.png'
 import dogButton from './assets/images/botton/Dog.png'
 import pigButton from './assets/images/botton/Pig.png'
-import startButton from './assets/images/botton/Start.png'
-import backToHomeButton from './assets/images/botton/BackToHome.png'
 
 const cardImages = {
   Rat: ratCard,
@@ -157,8 +155,7 @@ function App() {
       ratGif, oxGif, tigerGif, rabbitGif, dragonGif, snakeGif,
       horseGif, goatGif, monkeyGif, roosterGif, dogGif, pigGif,
       ratButton, oxButton, tigerButton, rabbitButton, dragonButton, snakeButton,
-      horseButton, goatButton, monkeyButton, roosterButton, dogButton, pigButton,
-      startButton, backToHomeButton
+      horseButton, goatButton, monkeyButton, roosterButton, dogButton, pigButton
     ]
     preloadImages.forEach((src) => {
       const img = new Image()
