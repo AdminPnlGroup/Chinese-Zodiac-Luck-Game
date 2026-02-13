@@ -156,14 +156,24 @@ function App() {
       bgImage,
       ratGif, oxGif, tigerGif, rabbitGif, dragonGif, snakeGif,
       horseGif, goatGif, monkeyGif, roosterGif, dogGif, pigGif,
-      ratCard, oxCard, tigerCard, rabbitCard, dragonCard, snakeCard,
-      horseCard, goatCard, monkeyCard, roosterCard, dogCard, pigCard
+      ratButton, oxButton, tigerButton, rabbitButton, dragonButton, snakeButton,
+      horseButton, goatButton, monkeyButton, roosterButton, dogButton, pigButton,
+      startButton, backToHomeButton
     ]
     preloadImages.forEach((src) => {
       const img = new Image()
       img.src = src
     })
   }, [])
+
+  useEffect(() => {
+    if (currentPage === 'selection') {
+      Object.values(cardImages).forEach((src) => {
+        const img = new Image()
+        img.src = src
+      })
+    }
+  }, [currentPage])
 
   if (currentPage === 'landing') {
     return (
@@ -240,15 +250,15 @@ function App() {
           <div className="flex justify-center mb-6 w-full px-4 relative">
             {imageLoading && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full h-[78vh] bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-[2.5rem] shadow-2xl animate-pulse"></div>
+                <div className="w-full h-[78vh] bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-[2.5rem] shadow-2xl"></div>
               </div>
             )}
             <img 
               src={cardImageUrl} 
               alt={selectedZodiac.name} 
-              className={`w-full h-auto max-h-[78vh] object-contain rounded-[2.5rem] shadow-2xl transition-opacity duration-300 ${imageLoading ? 'opacity-0' : 'opacity-100'}`}
+              className={`w-full h-auto max-h-[78vh] object-contain rounded-[2.5rem] shadow-2xl transition-opacity duration-200 ${imageLoading ? 'opacity-0' : 'opacity-100'}`}
               loading="eager"
-              decoding="async"
+              decoding="sync"
               fetchpriority="high"
               onLoad={() => {
                 setImageLoaded(true)
