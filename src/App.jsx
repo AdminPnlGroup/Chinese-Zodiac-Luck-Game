@@ -259,7 +259,7 @@ function App() {
           <div className={`flex justify-center w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <button
               onClick={goToLanding}
-              className="px-20 py-10 rounded-full font-bold text-5xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400"
+              className="px-20 py-10 rounded-full font-bold text-4xl text-white bg-gradient-to-r from-yellow-500 via-red-600 to-orange-600 hover:from-yellow-600 hover:via-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 shadow-2xl border-4 border-yellow-400"
             >
               ✨ Back to Home ✨
             </button>
